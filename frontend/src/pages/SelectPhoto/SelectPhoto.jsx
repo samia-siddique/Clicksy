@@ -1,16 +1,26 @@
-import React from 'react'
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const SelectPhoto = () => {
-    const navigate  = useNavigate()
+const SelectPhoto = ({ setSelectedImage }) => {
+  const navigate = useNavigate();
+
+  // Upload Photo
+  const handleFileSelect = (e) => {
+    const file = e.target.files[0];
+
+    if (!file) return;
+
+    setSelectedImage(file);
+    navigate("/customize");
+  };
 
   return (
     <div>
       <h1>Clicksy</h1>
-      <button onClick={()=> navigate("/capture")}>Take Photo</button>
-      <button>Select Photo</button>
+      <button onClick={() => navigate("/capture")}>Take Photo</button>
+      <input type="file" accept="image/*" onChange={handleFileSelect} />
     </div>
-  )
-}
+  );
+};
 
-export default SelectPhoto
+export default SelectPhoto;

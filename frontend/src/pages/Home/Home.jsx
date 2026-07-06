@@ -8,7 +8,7 @@ const Home = () => {
     <div>
       <h1>Clicksy</h1>
       <img src="" alt="" />
-      <button onClick={()=> navigate("/selectPhoto")} >Start</button>
+      <button onClick={() => navigate("/selectPhoto")}>Start</button>
     </div>
   );
 };
