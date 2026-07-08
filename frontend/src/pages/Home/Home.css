@@ -26,13 +26,13 @@
   margin-bottom: 50px;
 }
 
-.home-images img {
+.home-img img {
   width: 270px;
   transition: 0.35s ease;
   cursor: pointer;
 }
 
-.home-images img:hover {
+.home-img img:hover {
   transform: rotate(-4deg) scale(1.08);
 }
 

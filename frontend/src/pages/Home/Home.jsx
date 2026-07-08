@@ -11,7 +11,7 @@ const Home = () => {
       <h1>Clicksy</h1>
       <p>Pose, Click, Repeat</p>
 
-      <div className="home-images">
+      <div className="home-img">
         <img src={assets.camera} alt="" />
       </div>
 

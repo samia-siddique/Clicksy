@@ -1,0 +1,72 @@
+.select-photo {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -40px;
+}
+
+.select-photo h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: 4.5rem;
+  color: #b97d7b;
+  margin-bottom: 4px;
+  transition: 0.3s;
+}
+
+.select-photo h1:hover {
+  color: #575527;
+  transform: rotate(-2deg);
+}
+
+.select-photo p {
+  color: #5a4c46;
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin-bottom: 80px;
+}
+
+.add-photo-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.btn-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f4f0;
+  border-radius: 10px;
+  padding: 18px 24px;
+  gap: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 20px rgba(87, 85, 39, 0.08);
+}
+
+.btn-card span {
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  color: #5a4c46;
+}
+
+.btn-card:hover  {
+  transform: translateY(-4px);
+  background-color: #fff;
+}
+
+.icon {
+  background-color: transparent;
+  color: #575527;
+}
+
+.icon:hover {
+  color: #b97d7b;
+}
