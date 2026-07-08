@@ -1,0 +1,56 @@
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: 4.5rem;
+  color: #b97d7b;
+  margin-bottom: 4px;
+  transition: 0.3s;
+}
+
+.home h1:hover {
+  color: #575527;
+  transform: rotate(-2deg);
+}
+
+.home p {
+  color: #5a4c46;
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-bottom: 50px;
+}
+
+.home-images img {
+  width: 270px;
+  transition: 0.35s ease;
+  cursor: pointer;
+}
+
+.home-images img:hover {
+  transform: rotate(-4deg) scale(1.08);
+}
+
+.start-btn {
+  margin-top: 70px;
+  background: #b97d7b;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 45px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 12px 30px rgba(185, 125, 123, 0.25);
+}
+
+.start-btn:hover {
+  background: #575527;
+  transform: translateY(-3px);
+}
