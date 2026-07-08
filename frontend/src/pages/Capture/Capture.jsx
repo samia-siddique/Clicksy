@@ -1,11 +1,14 @@
 import React from 'react'
 import Camera from '../../components/Camera/Camera'
 
-const Capture = () => {
+const Capture = ({ capturedImage, setCapturedImage }) => {
   return (
     <div>
       <h3>Strike a Pose</h3>
-      <Camera/>
+       <Camera
+        capturedImage={capturedImage}
+        setCapturedImage={setCapturedImage}
+      />
     </div>
   )
 }

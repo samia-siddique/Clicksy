@@ -1,10 +1,17 @@
 import React from "react";
 
-const Customize = ({ selectedImage }) => {
+const Customize = ({ selectedImage, capturedImage }) => {
   return (
     <div>
       <h2>Customize It</h2>
-      <img src={URL.createObjectURL(selectedImage)} alt="selected" />
+
+      {selectedImage && (
+        <img src={URL.createObjectURL(selectedImage)} alt="selected" />
+      )}
+
+      {capturedImage.map((image, index) => (
+        <img key={index} src={image} alt={`captured ${index + 1}`} />
+      ))}
     </div>
   );
 };

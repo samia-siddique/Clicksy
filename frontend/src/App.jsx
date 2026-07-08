@@ -7,6 +7,7 @@ import Customize from "./pages/Customize/Customize";
 
 const App = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [capturedImage, setCapturedImage] = useState([])
 
   return (
     <div>
@@ -17,11 +18,11 @@ const App = () => {
           element={<SelectPhoto setSelectedImage={setSelectedImage} />}
         />
 
-        <Route path="/capture" element={<Capture />} />
+        <Route path="/capture" element={<Capture capturedImage={capturedImage} setCapturedImage={setCapturedImage} />} />
 
         <Route
           path="/customize"
-          element={<Customize selectedImage={selectedImage} />}
+          element={<Customize selectedImage={selectedImage} capturedImage={capturedImage}/>}
         />
       </Routes>
     </div>

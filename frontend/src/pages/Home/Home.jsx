@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div>
       <h1>Clicksy</h1>
-      <img src="" alt="" />
+      {/* <img src="" alt="" /> */}
       <button onClick={() => navigate("/selectPhoto")}>Start</button>
     </div>
   );

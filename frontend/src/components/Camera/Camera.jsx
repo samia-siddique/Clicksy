@@ -2,9 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Webcam from "react-webcam";
 
-const Camera = () => {
+const Camera = ({ capturedImage, setCapturedImage }) => {
   const webcamRef = useRef(null);
-  const [capturedImage, setCapturedImage] = useState([]);
   const navigate = useNavigate();
   const [countDown, setCountDown] = useState(null);
 
