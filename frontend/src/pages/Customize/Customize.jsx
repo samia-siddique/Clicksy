@@ -9,8 +9,8 @@ const Customize = ({ selectedImage, capturedImage }) => {
         <img src={URL.createObjectURL(selectedImage)} alt="selected" />
       )}
 
-      {capturedImage.map((image, index) => (
-        <img key={index} src={image} alt={`captured ${index + 1}`} />
+      {capturedImage.map((img, index) => (
+        <img key={index} src={img} alt={`captured ${index + 1}`} />
       ))}
     </div>
   );
