@@ -57,7 +57,7 @@ input[type="file"] {
   color: #5a4c46;
 }
 
-.btn-card:hover  {
+.btn-card:hover {
   transform: translateY(-4px);
   background-color: #fff;
 }
@@ -70,3 +70,27 @@ input[type="file"] {
 .icon:hover {
   color: #b97d7b;
 }
+
+.upload-preview {
+  display: flex;
+  gap: 14px;
+  margin-top: 35px;
+}
+
+.upload-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 90px;
+  border: 2px dashed #b97d7b;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: #b77b7d;
+  transition: 0.3s;
+  font-size: 12px;
+}
+

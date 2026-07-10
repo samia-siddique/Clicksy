@@ -84,7 +84,7 @@
   background: transparent;
 }
 
-.tools-section button {
+.sticker-btn button {
   padding: 10px 18px;
   margin: 6px;
   border: none;
@@ -93,7 +93,7 @@
   cursor: pointer;
 }
 
-.tools-section button:hover {
+.sticker-btn button:hover {
   background: #ecc4c3;
 }
 
@@ -122,7 +122,7 @@
   cursor: pointer;
   transition: 0.3s;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .download-btn:hover {
@@ -155,9 +155,8 @@
     justify-content: center;
   }
 
-  .sticker-buttons {
+  .sticker-btn {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
   }
 }

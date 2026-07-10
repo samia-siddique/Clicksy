@@ -7,6 +7,9 @@ const Customize = ({ selectedImage, capturedImage }) => {
   const [sticker, setSticker] = useState("");
   const stripRef = useRef(null);
 
+  //Upload Or Take Photos
+  const photos = selectedImage.length > 0 ? selectedImage : capturedImage;
+
   //Add Text
   const handleAddText = (e) => {
     setText(e.target.value);
@@ -28,15 +31,12 @@ const Customize = ({ selectedImage, capturedImage }) => {
 
       <div className="customize-container">
         <div className="photostrip" ref={stripRef}>
-          {selectedImage && (
-            <div className="photo-frame">
-              <img src={URL.createObjectURL(selectedImage)} alt="Selected" />
-            </div>
-          )}
-
-          {capturedImage.map((img, index) => (
+          {photos.map((img, index) => (
             <div className="photo-frame" key={index}>
-              <img src={img} alt={`Preview ${index + 1}`} />
+              <img
+                src={img instanceof File ? URL.createObjectURL(img) : img}
+                alt={`Photo ${index + 1}`}
+              />
             </div>
           ))}
 
@@ -51,11 +51,16 @@ const Customize = ({ selectedImage, capturedImage }) => {
           <div className="tools-section">
             <h3>Stickers</h3>
 
-            <button onClick={() => setSticker("🌸")}>🌸</button>
-            <button onClick={() => setSticker("⭐")}>⭐</button>
-            <button onClick={() => setSticker("💖")}>💖</button>
-            <button onClick={() => setSticker("📷")}>📷</button>
-            <button onClick={() => setSticker("☁️")}>☁️</button>
+            <div className="sticker-btn">
+              <button onClick={() => setSticker("🌸")}>🌸</button>
+              <button onClick={() => setSticker("⭐")}>⭐</button>
+              <button onClick={() => setSticker("💖")}>💖</button>
+              <button onClick={() => setSticker("📷")}>📷</button>
+              <button onClick={() => setSticker("☁️")}>☁️</button>
+              <button onClick={() => setSticker("😝")}>😝</button>
+              <button onClick={() => setSticker("🦋")}>🦋</button>
+              <button onClick={() => setSticker("😼")}>😼</button>
+            </div>
 
             <h3>Add Text</h3>
 
@@ -65,9 +70,11 @@ const Customize = ({ selectedImage, capturedImage }) => {
               value={text}
               onChange={handleAddText}
             />
+          </div>
 
-            
-          </div><button onClick={downloadStrip} className="download-btn">Download Strip</button>
+          <button onClick={downloadStrip} className="download-btn">
+            Download Strip
+          </button>
         </div>
       </div>
     </div>

@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SelectPhoto.css";
 import { useNavigate } from "react-router-dom";
 import assets from "../../assets/assets";
 import { Camera, Image } from "lucide-react";
 
-const SelectPhoto = ({ setSelectedImage }) => {
+const SelectPhoto = ({ selectedImage, setSelectedImage }) => {
   const navigate = useNavigate();
+  const [showUpload, setShowUpload] = useState(false);
 
   // Upload Photo
   const handleFileSelect = (e) => {
@@ -13,8 +14,17 @@ const SelectPhoto = ({ setSelectedImage }) => {
 
     if (!file) return;
 
-    setSelectedImage(file);
-    navigate("/customize");
+    setSelectedImage((prev) => {
+      const updated = [...prev, file];
+
+      if (updated.length === 3) {
+        navigate("/customize");
+      }
+
+      return updated;
+    });
+
+    e.target.value = "";
   };
 
   return (
@@ -28,7 +38,11 @@ const SelectPhoto = ({ setSelectedImage }) => {
           <span>Take Photo</span>
         </div>
 
-        <label htmlFor="upload" className="upload-btn btn-card">
+        <label
+          htmlFor="upload"
+          className="upload-btn btn-card"
+          onClick={() => setShowUpload(true)}
+        >
           <Image size={35} className="icon" />
           <span>Upload Photo</span>
         </label>
@@ -39,6 +53,16 @@ const SelectPhoto = ({ setSelectedImage }) => {
           onChange={handleFileSelect}
           id="upload"
         />
+
+        {showUpload && (
+          <div className="upload-preview">
+            {[0, 1, 2].map((_, index) => (
+              <label htmlFor="upload" className="upload-box" key={index}>
+                {selectedImage[index] ? "✓" : "Upload"}
+              </label>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
