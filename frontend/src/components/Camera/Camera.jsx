@@ -7,13 +7,15 @@ const Camera = ({ capturedImage, setCapturedImage }) => {
   const webcamRef = useRef(null);
   const navigate = useNavigate();
   const [countDown, setCountDown] = useState(null);
-const previewImages = [0, 1, 2];
+  const previewImages = [0, 1, 2];
 
   //Take photo three times
   useEffect(() => {
     if (capturedImage.length === 0) return;
     if (capturedImage.length === 3) {
-      navigate("/customize");
+      setTimeout(() => {
+        navigate("/customize");
+      }, 1500);
     } else {
       startCount();
     }
@@ -49,7 +51,7 @@ const previewImages = [0, 1, 2];
 
   return (
     <div className="camera">
-      <Webcam screenshotFormat="image/png" ref={webcamRef} />
+      <Webcam screenshotFormat="image/png" ref={webcamRef} mirrored={true} />
 
       {countDown !== null && <h1 className="countdown">{countDown}</h1>}
 
