@@ -4,7 +4,6 @@ import Home from "./pages/Home/Home";
 import SelectPhoto from "./pages/SelectPhoto/SelectPhoto";
 import Capture from "./pages/Capture/Capture";
 import Customize from "./pages/Customize/Customize";
-import Preview from "./pages/Preview/Preview";
 
 const App = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -39,7 +38,6 @@ const App = () => {
           }
         />
 
-        <Route path="/preview" element={<Preview/>} />
       </Routes>
     </div>
   );

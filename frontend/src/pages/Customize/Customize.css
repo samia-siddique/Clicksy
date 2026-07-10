@@ -7,7 +7,6 @@
 }
 
 .customize h2 {
-  font-family: "Manrope" sans-serif;
   color: #b97d7b;
   font-size: 2rem;
   margin-bottom: 30px;
@@ -31,10 +30,8 @@
   background-color: #fff;
   width: 260px;
   padding: 18px;
-  display: flex;
-  flex-direction: column;
   gap: 14px;
-  box-shadow: 0px 10px 10px 10px #29292900;
+  box-shadow: 0 15px 35px rgba(87, 85, 39, 0.12);
   position: relative;
 }
 
@@ -114,4 +111,53 @@
   right: 20px;
   font-size: 35px;
   background: transparent;
+}
+
+.download-btn {
+  padding: 10px 18px;
+  margin: 6px;
+  border: none;
+  border-radius: 10px;
+  background: #b97d7b;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.download-btn:hover {
+  background-color: #575527;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .customize-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .photostrip {
+    width: 260px;
+  }
+
+  .photo-frame {
+    height: 150px;
+  }
+  .right-container {
+    width: 100%;
+    max-width: 320px;
+    margin-left: 0;
+  }
+
+  .tools-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sticker-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 }

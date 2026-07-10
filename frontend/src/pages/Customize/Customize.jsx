@@ -1,15 +1,25 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./Customize.css";
-import { useNavigate } from "react-router-dom";
+import html2canvas from "html2canvas";
 
 const Customize = ({ selectedImage, capturedImage }) => {
-  const navigate = useNavigate();
   const [text, setText] = useState("");
   const [sticker, setSticker] = useState("");
-  const [frames, setFrames] = useState("");
+  const stripRef = useRef(null);
 
+  //Add Text
   const handleAddText = (e) => {
     setText(e.target.value);
+  };
+
+  //Download Strip
+  const downloadStrip = async () => {
+    const canvas = await html2canvas(stripRef.current);
+    const image = canvas.toDataURL("image/png");
+    const link = document.createElement("a");
+    link.download = "Clicksy.png";
+    link.href = image;
+    link.click();
   };
 
   return (
@@ -17,9 +27,11 @@ const Customize = ({ selectedImage, capturedImage }) => {
       <h2>Customize It</h2>
 
       <div className="customize-container">
-        <div className="photostrip">
+        <div className="photostrip" ref={stripRef}>
           {selectedImage && (
-            <img src={URL.createObjectURL(selectedImage)} alt="selected" />
+            <div className="photo-frame">
+              <img src={URL.createObjectURL(selectedImage)} alt="Selected" />
+            </div>
           )}
 
           {capturedImage.map((img, index) => (
@@ -54,13 +66,8 @@ const Customize = ({ selectedImage, capturedImage }) => {
               onChange={handleAddText}
             />
 
-            <button
-              onClick={() => navigate("/preview")}
-              className="download-btn"
-            >
-              Done
-            </button>
-          </div>
+            
+          </div><button onClick={downloadStrip} className="download-btn">Download Strip</button>
         </div>
       </div>
     </div>

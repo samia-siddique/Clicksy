@@ -12,10 +12,10 @@ const Home = () => {
       <p>Pose, Click, Repeat</p>
 
       <div className="home-img">
-        <img src={assets.camera} alt="" />
+        <img src={assets.camera} alt="Vintage camera" />
       </div>
 
-      <button class="start-btn" onClick={() => navigate("/selectPhoto")}>
+      <button className="start-btn" onClick={() => navigate("/selectPhoto")}>
         Start
       </button>
     </div>

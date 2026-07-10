@@ -7,7 +7,7 @@ const Camera = ({ capturedImage, setCapturedImage }) => {
   const webcamRef = useRef(null);
   const navigate = useNavigate();
   const [countDown, setCountDown] = useState(null);
-  const previewImages = [0, 1, 2];
+  const previewImages = Array(3).fill(null);
 
   //Take photo three times
   useEffect(() => {
