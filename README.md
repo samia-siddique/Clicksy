@@ -1,7 +1,7 @@
 # Clicksy
 
 A PhotoBooth Website
-Clicksy is a fun little photobooth website where you can take photos, upload them, customize your photo strip, and download it. I built this project to learn more about React and how cameras work on the web (which was definitely new territory for me 😭).
+Clicksy is a fun little photobooth website where you can take photos, upload them, customize your photo strip, and download it. I built this project to learn more about React and how cameras work on the web.
 
 ## Features
 
