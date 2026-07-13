@@ -3,7 +3,7 @@ import "./Camera.css";
 import { useNavigate } from "react-router-dom";
 import Webcam from "react-webcam";
 
-const Camera = ({ capturedImage, setCapturedImage }) => {
+const Camera = ({ capturedImage, setCapturedImage, selectedFilter }) => {
   const webcamRef = useRef(null);
   const navigate = useNavigate();
   const [countDown, setCountDown] = useState(null);
@@ -51,7 +51,12 @@ const Camera = ({ capturedImage, setCapturedImage }) => {
 
   return (
     <div className="camera">
-      <Webcam screenshotFormat="image/png" ref={webcamRef} mirrored={true} />
+      <Webcam
+        screenshotFormat="image/png"
+        ref={webcamRef}
+        mirrored={true}
+        style={{ filter: selectedFilter }}
+      />
 
       {countDown !== null && <h1 className="countdown">{countDown}</h1>}
 
