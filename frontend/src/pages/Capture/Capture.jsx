@@ -5,6 +5,8 @@ import Filters from "../../components/Filters/Filters";
 
 const Capture = ({ capturedImage, setCapturedImage }) => {
   const [selectedFilter, setSelectedFilter] = useState("none");
+  const [flash, setFlash] = useState(false);
+
 
   return (
     <div className="capture">
@@ -16,6 +18,8 @@ const Capture = ({ capturedImage, setCapturedImage }) => {
         capturedImage={capturedImage}
         setCapturedImage={setCapturedImage}
         selectedFilter={selectedFilter}
+        flash={flash}
+        setFlash={setFlash}
       />
 
       <Filters

@@ -3,7 +3,13 @@ import "./Camera.css";
 import { useNavigate } from "react-router-dom";
 import Webcam from "react-webcam";
 
-const Camera = ({ capturedImage, setCapturedImage, selectedFilter }) => {
+const Camera = ({
+  capturedImage,
+  setCapturedImage,
+  selectedFilter,
+  flash,
+  setFlash,
+}) => {
   const webcamRef = useRef(null);
   const navigate = useNavigate();
   const [countDown, setCountDown] = useState(null);
@@ -27,6 +33,15 @@ const Camera = ({ capturedImage, setCapturedImage, selectedFilter }) => {
     setCountDown(3);
   };
 
+  //flash
+  const cameraFlash = () => {
+    setTimeout(() => {
+      setFlash(false);
+    }, 200);
+
+    setFlash(true);
+  };
+
   useEffect(() => {
     if (countDown === null) return;
 
@@ -45,6 +60,7 @@ const Camera = ({ capturedImage, setCapturedImage, selectedFilter }) => {
 
   //Take Photo
   const capture = () => {
+    cameraFlash();
     const imgScreenShot = webcamRef.current.getScreenshot();
     setCapturedImage((prev) => [...prev, imgScreenShot]);
   };
@@ -58,6 +74,7 @@ const Camera = ({ capturedImage, setCapturedImage, selectedFilter }) => {
         style={{ filter: selectedFilter }}
       />
 
+      {flash && <span className="flash"></span>}
       {countDown !== null && <h1 className="countdown">{countDown}</h1>}
 
       <div className="captured-img">
