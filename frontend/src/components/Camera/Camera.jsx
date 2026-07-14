@@ -62,7 +62,24 @@ const Camera = ({
   const capture = () => {
     cameraFlash();
     const imgScreenShot = webcamRef.current.getScreenshot();
-    setCapturedImage((prev) => [...prev, imgScreenShot]);
+
+    //Filters
+    const image = new Image();
+    image.src = imgScreenShot;
+    image.onload = () => {
+      const canvas = document.createElement("canvas");
+      canvas.width = image.width;
+      canvas.height = image.height;
+
+      const ctx = canvas.getContext("2d");
+
+      ctx.filter = selectedFilter;
+      ctx.drawImage(image, 0, 0);
+
+      const filteredImage = canvas.toDataURL("image/png");
+
+      setCapturedImage((prev) => [...prev, filteredImage]);
+    };
   };
 
   return (

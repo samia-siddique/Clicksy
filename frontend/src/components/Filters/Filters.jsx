@@ -11,6 +11,7 @@ const Filters = ({ selectedFilter, setSelectedFilter }) => {
     { name: "Cool", value: "hue-rotate(1deg) saturate(100%)" },
   ];
 
+
   return (
     <div className="filters">
       {filters.map((filter) => (
