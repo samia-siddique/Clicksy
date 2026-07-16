@@ -10,6 +10,7 @@ Clicksy is a fun little photobooth website where you can take photos, upload the
 - Add cute stickers
 - Add your own text
 - Download your finished photo strip
+- Different Filters
 
 ## Built With
 
